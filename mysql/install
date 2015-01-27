@@ -1,0 +1,15 @@
+cmake . -DCMAKE_INSTALL_PREFIX=/data/app/mysqlroot/base/ \
+-DMYSQL_DATADIR=/data/app/mysqlroot/data/3306/ \
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \
+-DWITH_PARTITION_STORAGE_ENGINE=1 \
+-DWITH_FEDERATED_STORAGE_ENGINE=1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
+-DWITH_MYISAM_STORAGE_ENGINE=1 \
+-DENABLED_LOCAL_INFILE=1 \
+-DDEFAULT_CHARSET=utf8 \
+-DDEFAULT_COLLATION=utf8_general_ci \
+-DWITH_EMBEDDED_SERVER=1 \
+-DCMAKE_EXE_LINKER_FLAGS='-ljemalloc'
+
+
+/data/app/mysqlroot/base/scripts/mysql_install_db --defaults-file=/data/app/mysqlroot/data/3306/my.cnf --basedir=/data/app/mysqlroot/base --datadir=/data/app/mysqlroot/data/3306/data --user=pso
